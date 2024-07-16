@@ -1,0 +1,31 @@
+﻿<Window x:Class="DotsLines.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DotsLines"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <ComboBox Grid.Row="1" Background="Green" SelectionChanged="PathComboBox_Selected" x:Name="PathComboBox" Width="100" HorizontalAlignment="Left" />
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <CheckBox x:Name="DisplayAllDots" Checked="DisplayAllDots_Changed" Unchecked="DisplayAllDots_Changed"/>
+                <Label Content="DisplayAllDots" Padding="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <CheckBox x:Name="PresistLines" Checked="PresistLines_Changed" Unchecked="PresistLines_Changed"/>
+                <Label Content="PresistLines" Padding="10,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Canvas Grid.Row="2" x:Name="DotsCanvas"/>
+    </Grid>
+</Window>
